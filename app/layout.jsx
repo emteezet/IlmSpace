@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Sidebar from "@/components/Sidebar";
+import MainContent from "@/components/MainContent";
 import { AuthProvider } from "@/context/AuthContext";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -20,9 +21,9 @@ export default function RootLayout({ children }) {
                         <Navbar />
                         <div className="flex">
                             <Sidebar />
-                            <main className="flex-1 lg:ml-64 pt-16 p-6 min-h-[calc(100vh-64px)]">
+                            <MainContent>
                                 {children}
-                            </main>
+                            </MainContent>
                         </div>
                     </div>
                 </AuthProvider>
