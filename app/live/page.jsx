@@ -5,6 +5,8 @@ import { useAuth } from "@/context/AuthContext";
 import { Mic2, Users, Clock, Play } from "lucide-react";
 import Link from "next/link";
 
+export const dynamic = 'force-dynamic';
+
 export default function LivePage() {
   const { user, loading } = useAuth();
   const [sessions, setSessions] = useState([]);

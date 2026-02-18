@@ -3,6 +3,8 @@
 import { useAuth } from "@/context/AuthContext";
 import { Settings, Bell, Lock, User, LogOut } from "lucide-react";
 
+export const dynamic = "force-dynamic";
+
 export default function SettingsPage() {
   const { user, logout } = useAuth();
 

@@ -1,14 +1,19 @@
 'use client';
 
+export const dynamic = 'force-dynamic'; // Disable static generation for protected routes
+
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
 import { Plus, BookOpen, School as SchoolIcon, Mic2, Users, Star, Search, Filter } from 'lucide-react';
 import Link from 'next/link';
+import dynamicImport from 'next/dynamic';
 
 import CreateSchoolModal from '@/components/CreateSchoolModal';
 import CreateClassModal from '@/components/CreateClassModal';
 import CreateSessionModal from '@/components/CreateSessionModal';
-import LiveSpace from '@/components/LiveSpace';
+
+// Dynamically import LiveSpace to avoid SSR issues with Agora SDK
+const LiveSpace = dynamicImport(() => import('@/components/LiveSpace'), { ssr: false });
 
 export default function DashboardPage() {
     const { user, loading } = useAuth();

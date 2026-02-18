@@ -5,6 +5,8 @@ import { useAuth } from "@/context/AuthContext";
 import { BookOpen, Search, Filter } from "lucide-react";
 import ClassCard from "@/components/ClassCard";
 
+export const dynamic = 'force-dynamic';
+
 export default function ClassesPage() {
   const { user, loading } = useAuth();
   const [classes, setClasses] = useState([]);
