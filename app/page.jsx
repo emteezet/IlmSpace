@@ -1,4 +1,5 @@
 import { Mic2, Users, BookOpen, Star } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Home() {
     return (
@@ -16,12 +17,12 @@ export default function Home() {
                         Join live audio classes, connect with authentic teachers, and grow in your knowledge from anywhere in the world.
                     </p>
                     <div className="flex gap-4">
-                        <button className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold rounded-xl transition-all">
+                        <Link href="/register?role=student" className="px-6 py-3 bg-emerald-500 hover:bg-emerald-600 text-black font-semibold rounded-xl transition-all inline-block">
                             Discover Classes
-                        </button>
-                        <button className="px-6 py-3 border border-white/10 hover:bg-white/5 font-semibold rounded-xl transition-all">
+                        </Link>
+                        <Link href="/register?role=teacher" className="px-6 py-3 border border-white/10 hover:bg-white/5 font-semibold rounded-xl transition-all inline-block">
                             Join as Teacher
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>
