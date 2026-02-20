@@ -29,25 +29,25 @@ export default function Sidebar() {
   }
 
   return (
-    <aside className="fixed left-0 top-16 bottom-0 w-64 bg-[#0a0a0a] border-r border-white/10 hidden lg:flex flex-col p-4 z-40">
-      <div className="flex-1 space-y-2">
+    <aside className="fixed left-0 top-16 bottom-0 w-64 bg-[#0a0a0a] border-r border-white/10 hidden lg:flex flex-col p-3 z-40 overflow-y-auto scrollbar-hide">
+      <div className="flex-1 space-y-1">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="flex items-center gap-3 px-4 py-3 text-gray-400 hover:text-white hover:bg-white/5 rounded-xl transition-all group"
+            className="flex items-center gap-3 px-3 py-2.5 text-gray-400 hover:text-white hover:bg-white/5 rounded-lg transition-all group text-sm"
           >
-            <item.icon className="w-5 h-5 group-hover:text-emerald-500" />
-            <span className="font-medium">{item.label}</span>
+            <item.icon className="w-5 h-5 flex-shrink-0 group-hover:text-emerald-500" />
+            <span className="font-medium truncate">{item.label}</span>
           </Link>
         ))}
       </div>
 
       <button
         onClick={logout}
-        className="flex items-center gap-3 px-4 py-3 text-red-400 hover:bg-red-400/5 rounded-xl transition-all w-full"
+        className="flex items-center gap-3 px-3 py-2.5 text-red-400 hover:bg-red-400/5 rounded-lg transition-all w-full text-sm"
       >
-        <LogOut className="w-5 h-5" />
+        <LogOut className="w-5 h-5 flex-shrink-0" />
         <span className="font-medium">Logout</span>
       </button>
     </aside>
